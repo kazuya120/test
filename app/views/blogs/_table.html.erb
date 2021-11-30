@@ -1,0 +1,14 @@
+<% blogs.each do |blog| %>
+<tr>
+  <td>
+  <%= link_to user_path(blog.user) do %>
+  <%= attachment_image_tag(blog.user, :profile_image, :fill, 50, 50, fallback: "no-image-icon.jpg") %>
+  <% end %>
+  </td>
+  <td><%= link_to blog.title, blog_path(blog), class: "blog_#{blog.id}" %></td>
+  <td><%= blog.body %></td>
+  <td id="favorites_btn_<%= blog.id %>">
+    <%= render 'favorites/favorite', blog: blog %>
+  </td>
+</tr>
+<% end %>

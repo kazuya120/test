@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+      <h1>Editing Blog</h1>
+      <%= render 'layouts/errors', obj: @blog %>
+      <%= render 'form', blog: @blog %>
+      <%= link_to 'Show', blog_path(@blog), class: "blog_#{@blog.id}" %> |
+      <%= link_to 'Back', blogs_path, class: "back" %>
+    </div>
+  </div>
+</div>
